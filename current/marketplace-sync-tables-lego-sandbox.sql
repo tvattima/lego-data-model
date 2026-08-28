@@ -80,9 +80,6 @@ ALTER TABLE shipment
     ADD COLUMN external_shipment_id VARCHAR(100) NULL AFTER shipment_id,
     ADD COLUMN fulfillment_platform_code VARCHAR(30) NULL AFTER carrier_code,
     ADD COLUMN service_code VARCHAR(100) NULL AFTER fulfillment_platform_code,
-    ADD COLUMN shipment_cost DECIMAL(12,4) NULL AFTER service_code,
-    ADD COLUMN insurance_cost DECIMAL(12,4) NULL AFTER shipment_cost,
-    ADD COLUMN currency_code VARCHAR(8) NULL AFTER insurance_cost,
     ADD UNIQUE KEY uq_shipment_platform_external (fulfillment_platform_code, external_shipment_id);
 
 CREATE TABLE IF NOT EXISTS marketplace_order (
